@@ -1,0 +1,16 @@
+# Dependencies
+node_modules
+
+# Output files
+product.txt
+products-api.txt
+screenshot.jpg
+
+# Documentation
+ТЗ\ тестовый\ парсер\ \(Node JS\)\ vprok.pdf
+
+# Environment variables
+.env
+
+# OS files
+.DS_Store
