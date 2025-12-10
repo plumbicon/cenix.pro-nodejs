@@ -15,7 +15,7 @@ export const DEFAULT_VIEWPORT_SIZE =
 
 export const SELECTORS = {
   x5idCloseButton: '[class*="Tooltip_closeIcon"]',
-  cookieButton: 'button[class*="cookie-policy__button"]',
+
   priceContainer: '[class*="ProductPage_desktopBuy"]',
   price: 'span[class*="Price_price"]',
   rating: '.ActionsRow_stars__EKt42',
