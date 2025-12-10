@@ -296,7 +296,13 @@ export async function runScraper(options) {
     logger.log(
       'Scrolling to the top of the page before taking a screenshot...'
     );
-    await page.evaluate(() => window.scrollTo(0, 0));
+    // Ensure instant (non-smooth) scroll to top across browsers
+    await page.evaluate(() => {
+      // Use explicit 'auto' behavior to avoid any smooth animation
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      // Fallback: directly set scrolling element position
+      if (document.scrollingElement) document.scrollingElement.scrollTop = 0;
+    });
 
     await page.screenshot({ path: OUTPUT_FILES.screenshot, fullPage: true });
     logger.log(`Screenshot saved to ${OUTPUT_FILES.screenshot}`);
